@@ -1,0 +1,15 @@
+# Web Framework
+fastapi
+uvicorn[standard]
+
+# AI & Machine Learning
+transformers
+accelerate
+datasets
+
+# Docker API (Để Python điều khiển Docker tạo sandbox)
+docker
+
+# Tiện ích khác
+python-dotenv
+pydantic

@@ -1,0 +1,14 @@
+# Bỏ qua môi trường ảo (Cái bạn cần nhất đây)
+venv/
+env/
+
+# Bỏ qua bộ nhớ đệm của Python
+__pycache__/
+*.pyc
+
+# Bỏ qua trọng số mô hình và log (Rất nặng, không nên đưa lên Git)
+checkpoint/
+log/
+
+# (Tùy chọn) Bỏ qua file data thô nếu nó quá lớn (>50MB)
+# dataset/raw/
