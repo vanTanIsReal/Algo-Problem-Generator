@@ -7,9 +7,9 @@ transformers
 accelerate
 datasets
 
-# Docker API (Để Python điều khiển Docker tạo sandbox)
+# Docker API
 docker
 
-# Tiện ích khác
+# Tien ich khac
 python-dotenv
 pydantic

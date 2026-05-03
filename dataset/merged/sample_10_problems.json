@@ -1,0 +1,97 @@
+[
+  {
+    "id": "CF_2226_G",
+    "keywords": [
+      "strings",
+      "trees"
+    ],
+    "problem_text": "You are given an array $$$a$$$ of size $$$n$$$ ($$$1 \\leq a_i \\leq m$$$). Consider all $$$m!$$$ permutations of the array $$$[1, 2, \\ldots, m]$$$. For any permutation $$$p$$$, define the array $$$b_p$$$ as the array formed by concatenating the array $$$a$$$ and the permutation $$$p$$$. More formally, $$$b_p = [a_1, a_2, \\ldots, a_n, p_1, p_2, \\ldots, p_m]$$$. Let $$$f(i)$$$ denote the number of permutations $$$p$$$ such that the array $$$b_p$$$ contains exactly $$$i$$$ palindromic$$$^{\\text{∗}}$$$ subarrays of even length . Your task is to compute $$$$$$ \\sum_{i=0}^{10^{100}} f(i)^{i+1}.$$$$$$ Since the answer may be large, it should be computed modulo $$$998\\,244\\,353$$$. $$$^{\\text{∗}}$$$An array $$$[c_1, c_2, \\ldots, c_k]$$$ is said to be palindromic if $$$c_i = c_{k+1-i}$$$ for all $$$1 \\le i \\le k$$$."
+  },
+  {
+    "id": "CF_2226_F",
+    "keywords": [
+      "math",
+      "number theory"
+    ],
+    "problem_text": "There is an array $$$a$$$ of length $$$n$$$. Initially, $$$a_i = 0$$$ for all $$$1 \\le i \\le n$$$. A permutation$$$^{\\text{∗}}$$$ $$$p$$$ is said to be valid if at least one of the following conditions is satisfied for every $$$1 \\le i \\le n$$$: $$$a_i = 0$$$. $$$\\gcd(p_i, n) = a_i$$$. You have to process $$$q$$$ queries. In each query, you are given two integers $$$i$$$ and $$$x$$$, and you must update the array by setting $$$a_i:= x$$$ persistently . It is guaranteed that $$$a_i = 0$$$ at the time of each query, and it is guaranteed that $$$x$$$ divides $$$n$$$. After performing each query, output the sum of the number of inversions$$$^{\\text{†}}$$$ across all valid permutations. As the answers can be very large, report them modulo $$$998\\,244\\,353$$$. $$$^{\\text{∗}}$$$A permutation of length $$$m$$$ is an array consisting of $$$m$$$ distinct integers from $$$1$$$ to $$$m$$$ in arbitrary order. For example, $$$[2,3,1,5,4]$$$ is a permutation, but $$$[1,2,2]$$$ is not a permutation ($$$2$$$ appears twice in the array), and $$$[1,3,4]$$$ is also not a permutation ($$$m=3$$$ but there is a $$$4$$$ in the array). $$$^{\\text{†}}$$$An inversion in a permutation $$$p$$$ is a pair of indices $$$(i, j)$$$ such that $$$i  \\lt  j$$$ and $$$p_i  \\gt  p_j$$$. For example, the permutation $$$[4, 1, 3, 2]$$$ has $$$4$$$ inversions: $$$(1, 2)$$$, $$$(1, 3)$$$, $$$(1, 4)$$$, and $$$(3, 4)$$$."
+  },
+  {
+    "id": "CF_2226_E",
+    "keywords": [
+      "data structures",
+      "greedy",
+      "math",
+      "two pointers"
+    ],
+    "problem_text": "This is the hard version of this problem. In this version, you are required to find the values of $$$f(\\cdot)$$$ for each prefix of $$$a$$$. For any array $$$[c_1, c_2, \\ldots, c_m]$$$, we define $$$f(c)$$$ as the maximum possible $$$\\operatorname{mex}(c)$$$$$$^{\\text{∗}}$$$ that can be achieved by performing the following operation exactly once: Choose an integer array $$$[b_1, b_2, \\ldots, b_m]$$$ such that $$$b_i \\ge 1$$$ for all $$$1 \\le i \\le m$$$; Set $$$c_i := c_i \\, \\bmod \\, b_i$$$$$$^{\\text{†}}$$$ for every $$$1 \\le i \\le m$$$. You are given an array $$$a$$$ consisting of $$$n$$$ non-negative integers. For each prefix $$$a^{(i)} = [a_1, a_2, \\ldots, a_i]$$$, determine the value of $$$f(a^{(i)})$$$. $$$^{\\text{∗}}$$$$$$\\operatorname{mex}(c)$$$ denotes the minimum excluded (MEX) of the integers in $$$c$$$. For example, $$$\\operatorname{mex}([2,2,1])=0$$$ because $$$0$$$ does not belong to the array, and $$$\\operatorname{mex}([0,3,1,2])=4$$$ because $$$0$$$, $$$1$$$, $$$2$$$, and $$$3$$$ appear in the array, but $$$4$$$ does not. $$$^{\\text{†}}$$$$$$u \\bmod v$$$ denotes the remainder from dividing $$$u$$$ by $$$v$$$."
+  },
+  {
+    "id": "CF_2226_D",
+    "keywords": [
+      "constructive algorithms",
+      "dp",
+      "greedy",
+      "math"
+    ],
+    "problem_text": "You are given an array $$$a$$$ consisting of $$$n$$$ positive integers. For any segment of the array starting at position $$$l$$$ and ending at position $$$r$$$ ($$$1 \\le l \\le r \\le n$$$), let $$$m(l, r)$$$ denote the minimum value in that segment, and $$$M(l, r)$$$ denote the maximum value in that segment. Formally, $$$$$$ \\begin{aligned} m(l,r) &= \\min(a_l, a_{l+1}, \\ldots, a_r),\\\\ M(l,r) &= \\max(a_l, a_{l+1}, \\ldots, a_r).\\\\ \\end{aligned} $$$$$$ You may perform the following operation any number of times (possibly zero): Select two indices $$$l$$$ and $$$r$$$ ($$$1 \\le l \\le r \\le n$$$) such that $$$m(l, r) + M(l, r)$$$ is odd ; Reverse the entire segment $$$a_l, a_{l+1}, \\ldots, a_r$$$. In other words, for every $$$i$$$ with $$$l \\le i \\le r$$$, set $$$a_i := a_{l+r-i}$$$ simultaneously. Determine whether you can make the array $$$a$$$ non-decreasing $$$^{\\text{∗}}$$$ by performing a series of operations. $$$^{\\text{∗}}$$$An array $$$[b_1, b_2, \\ldots, b_k]$$$ is considered non-decreasing iff $$$b_1 \\le b_2 \\le \\ldots \\le b_k$$$."
+  },
+  {
+    "id": "CF_2226_C",
+    "keywords": [
+      "binary search",
+      "data structures",
+      "greedy",
+      "math",
+      "two pointers"
+    ],
+    "problem_text": "This is the easy version of this problem. The difference between the versions is that in this version, you are required to find only the value of $$$f(a)$$$. For any array $$$[c_1, c_2, \\ldots, c_m]$$$, we define $$$f(c)$$$ as the maximum possible $$$\\operatorname{mex}(c)$$$$$$^{\\text{∗}}$$$ that can be achieved by performing the following operation exactly once: Choose an integer array $$$[b_1, b_2, \\ldots, b_m]$$$ such that $$$b_i \\ge 1$$$ for all $$$1 \\le i \\le m$$$; Set $$$c_i := c_i \\, \\bmod \\, b_i$$$$$$^{\\text{†}}$$$ for every $$$1 \\le i \\le m$$$. You are given an array $$$a$$$ consisting of $$$n$$$ non-negative integers. Determine the value of $$$f(a)$$$. $$$^{\\text{∗}}$$$$$$\\operatorname{mex}(c)$$$ denotes the minimum excluded (MEX) of the integers in $$$c$$$. For example, $$$\\operatorname{mex}([2,2,1])=0$$$ because $$$0$$$ does not belong to the array, and $$$\\operatorname{mex}([0,3,1,2])=4$$$ because $$$0$$$, $$$1$$$, $$$2$$$, and $$$3$$$ appear in the array, but $$$4$$$ does not. $$$^{\\text{†}}$$$$$$u \\bmod v$$$ denotes the remainder from dividing $$$u$$$ by $$$v$$$."
+  },
+  {
+    "id": "CF_2226_B",
+    "keywords": [
+      "greedy",
+      "math",
+      "number theory"
+    ],
+    "problem_text": "An array is called good if the difference between the maximum value and the minimum value in the array is equal to the greatest common divisor (GCD) of all the elements in the array. Note that an empty array is considered to be not good. More formally, an array $$$[a_1, a_2, \\ldots, a_m]$$$ is good if and only if $$$$$$ \\max(a_1, a_2, \\ldots, a_m) - \\min(a_1, a_2, \\ldots, a_m) = \\gcd(a_1, a_2, \\ldots, a_m).$$$$$$ You are given a permutation$$$^{\\text{∗}}$$$ $$$p$$$ of length $$$n$$$. Determine the number of good subarrays$$$^{\\text{†}}$$$ in the given permutation. $$$^{\\text{∗}}$$$A permutation of length $$$m$$$ is an array consisting of $$$m$$$ distinct integers from $$$1$$$ to $$$m$$$ in arbitrary order. For example, $$$[2,3,1,5,4]$$$ is a permutation, but $$$[1,2,2]$$$ is not a permutation ($$$2$$$ appears twice in the array), and $$$[1,3,4]$$$ is also not a permutation ($$$m=3$$$ but there is $$$4$$$ in the array). $$$^{\\text{†}}$$$An array $$$b$$$ is a subarray of an array $$$a$$$ if $$$b$$$ can be obtained from $$$a$$$ by the deletion of several (possibly, zero or all) elements from the beginning and several (possibly, zero or all) elements from the end.  In particular, an array is a subarray of itself."
+  },
+  {
+    "id": "CF_2226_A",
+    "keywords": [
+      "greedy",
+      "math"
+    ],
+    "problem_text": "You are given an array $$$[a_1, a_2, \\ldots, a_n]$$$. You wish to make the array empty by performing the following operation any number of times: Select any sequence of indices $$$1 \\le i_1  \\lt  i_2  \\lt  \\ldots  \\lt  i_k \\le |a|$$$ (note that $$$|a|$$$ denotes the current length of the array $$$a$$$) such that $$$$$$a_{i_1} \\le a_{i_2} \\le \\ldots \\le a_{i_k}$$$$$$ Remove the elements $$$a_{i_1}, a_{i_2}, \\ldots, a_{i_k}$$$ from the array $$$a$$$. This operation incurs a cost equal to $$$a_{i_1} \\times a_{i_2} \\times \\cdots \\times a_{i_k}$$$. Determine the minimum total cost required to remove all the elements from the array $$$a$$$. Note that the total cost is equal to the sum of costs incurred over all the operations performed. As the answer can be very large, report the answer modulo $$$676\\,767\\,677$$$."
+  },
+  {
+    "id": "CF_2225_G",
+    "keywords": [
+      "brute force",
+      "graphs",
+      "greedy",
+      "number theory"
+    ],
+    "problem_text": "One day, Polycarp came up with the following simple problem: the numbers $$$0, 1, \\ldots, n-1$$$ are given. Is it possible to arrange them so that the absolute difference of every adjacent pair of numbers is divisible by at least one of the numbers $$$k_1, k_2, \\ldots, k_m$$$? Polycarp spent a long time thinking about how to solve this problem and eventually realized that it is not so simple after all. Help him solve this problem."
+  },
+  {
+    "id": "CF_2225_F",
+    "keywords": [
+      "binary search",
+      "brute force",
+      "greedy",
+      "hashing",
+      "string suffix structures",
+      "strings"
+    ],
+    "problem_text": "You are given a string $$$s$$$ consisting of lowercase Latin letters. You have to cut it into $$$k$$$ or more parts so that each part contains at least $$$l$$$ letters. After cutting the string into parts, the resulting strings will be sorted in lexicographical order. Your task is to cut the string so that the string at the $$$k$$$-th position in the sorted order is lexicographically as large as possible. For example, if $$$s = $$$ \" abracadabra \", $$$l = 2$$$, and $$$k = 5$$$, then it can be cut into five parts: \" ab \" \" rac \" \" ad \" \" ab \" \" ra \" After sorting the parts: \" ab \" \" ab \" \" ad \" \" ra \" \" rac \" The string \" rac \" will be at the fifth position. It can be shown that this answer is maximal among all possible ways to cut the string $$$s$$$."
+  },
+  {
+    "id": "CF_2225_E",
+    "keywords": [
+      "constructive algorithms",
+      "geometry",
+      "math"
+    ],
+    "problem_text": "You are given an array $$$p$$$ containing $$$n$$$ points with integer coordinates. These points are uniformly distributed inside some rectangle whose sides are parallel to the coordinate axes. You need to place several circles so that the following conditions hold: the radius of each circle is equal to $$$r$$$, and its center has integer coordinates; for every pair of circles, the area of their intersection is $$$0$$$ (but the circles may touch); at least $$$89$$$% of all points lie inside some circle or on the boundary of some circle (in other words, the number of points lying inside the circles or on their boundaries is at least $$$\\frac{89n}{100}$$$). The rectangle in which the points from array $$$p$$$ are distributed is unknown to you, but in all tests except for the example it is guaranteed that the area of one circle of radius $$$r$$$ does not exceed $$$\\frac{1}{10}$$$ of the area of this rectangle."
+  }
+]
