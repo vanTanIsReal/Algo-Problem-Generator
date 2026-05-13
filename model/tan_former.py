@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import math
 
+
 class PositionalEncoding(nn.Module):
     # (Giữ nguyên như phiên bản trước)
     def __init__(self, d_model, dropout=0.1, max_len=5000):
@@ -91,3 +92,17 @@ class TanFormerPro(nn.Module):
         logits = self.fc_out(output)
         
         return logits
+if __name__ == "__main__":
+    from transformers import AutoModel, AutoTokenizer
+    model_name = "vinai/phobert-base-v2"  # Hoặc model khác phù hợp
+    encoder = AutoModel.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = TanFormerPro(
+        vocab_size=tokenizer.vocab_size,
+        hf_encoder=encoder,
+        encoder_dim=768,
+        d_model=768,
+        fine_tune_encoder_layers=4,
+        num_layers=8
+    )
+    print("Model và encoder đã khởi tạo thành công!")

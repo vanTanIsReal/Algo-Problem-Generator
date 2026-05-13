@@ -1,0 +1,58 @@
+[
+  {
+    "keywords": [
+      "dynamic programming",
+      "array"
+    ],
+    "generated_problem_vi": "Problem related to: dynamic programming, array"
+  },
+  {
+    "keywords": [
+      "graph",
+      "BFS"
+    ],
+    "generated_problem_vi": "Problem related to: graph, BFS"
+  },
+  {
+    "keywords": [
+      "string",
+      "sorting"
+    ],
+    "generated_problem_vi": "Problem related to: string, sorting"
+  },
+  {
+    "keywords": [
+      "math",
+      "recursion"
+    ],
+    "generated_problem_vi": "Kamilka has a flock of $$$n$$$ sheep, the $$$i$$$-th of which has a beauty level of $$$a_i$$$. All $$$a_i$$$ are distinct. Morning has come, which means they need to be fed. Kamilka can choose a non-negative integer $$$d$$$ and give each sheep $$$d$$$ bunches of grass. After that, the beauty level of each sheep increases by $$$d$$$. In the evening, Kamilka must choose exactly two sheep and take them to the mountains. If the beauty levels of these two sheep are $$$x$$$ and $$$y$$$ (after they hav"
+  },
+  {
+    "keywords": [
+      "binary search",
+      "divide and conquer"
+    ],
+    "generated_problem_vi": "Boboniu defines BN-string as a string $$$s$$$ of characters 'B' and 'N'. You can perform the following operations on the BN-string $$$s$$$: Remove a character of $$$s$$$. Remove a substring \" BN \" or \" NB \" of $$$s$$$. Add a character 'B' or 'N' to the end of $$$s$$$. Add a string \" BN \" or \" NB \" to the end of $$$s$$$. Note that a string $$$a$$$ is a substring of a string $$$b$$$ if $$$a$$$ can be obtained from $$$b$$$ by deletion of several (possibly, zero or all) characters from the beginning"
+  },
+  {
+    "keywords": [
+      "greedy",
+      "optimization"
+    ],
+    "generated_problem_vi": "Kamilka has a flock of $$$n$$$ sheep, the $$$i$$$-th of which has a beauty level of $$$a_i$$$. All $$$a_i$$$ are distinct. Morning has come, which means they need to be fed. Kamilka can choose a non-negative integer $$$d$$$ and give each sheep $$$d$$$ bunches of grass. After that, the beauty level of each sheep increases by $$$d$$$. In the evening, Kamilka must choose exactly two sheep and take them to the mountains. If the beauty levels of these two sheep are $$$x$$$ and $$$y$$$ (after they hav"
+  },
+  {
+    "keywords": [
+      "implementation",
+      "constructive algorithms"
+    ],
+    "generated_problem_vi": "A parentheses sequence is a string consisting of characters \" ( \" and \" ) \", for example \" (()(( \". A balanced parentheses sequence is a parentheses sequence which can become a valid mathematical expression after inserting numbers and operations into it, for example \" (()(())) \". The balance of a parentheses sequence is defined as the number of opening parentheses \" ( \" minus the number of closing parentheses \" ) \". For example, the balance of the sequence \" (()(( \" is 3. A balanced parentheses "
+  },
+  {
+    "keywords": [
+      "data structures",
+      "queue"
+    ],
+    "generated_problem_vi": "Given a tree$$$^{\\text{∗}}$$$ with $$$n$$$ vertices numbered from $$$1$$$ to $$$n$$$. Each vertex has an initial color $$$a_i$$$. Each edge of the tree is defined by three numbers: $$$u_i$$$, $$$v_i$$$, and $$$c_i$$$, where $$$u_i$$$ and $$$v_i$$$ are the endpoints of the edge, and $$$c_i$$$ is the edge parameter. The cost of the edge is defined as follows: if the colors of vertices $$$u_i$$$ and $$$v_i$$$ are the same, the cost is $$$0$$$; otherwise, the cost is $$$c_i$$$. You are also given $$"
+  }
+]
